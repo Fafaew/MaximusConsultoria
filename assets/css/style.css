@@ -611,11 +611,14 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.services {
+  background-color: #F6F6F6;
+}
+
 .services .icon-box {
   text-align: center;
   padding: 70px 20px 80px 20px;
   transition: all ease-in-out 0.3s;
-  background: #fff;
 }
 
 .services .icon-box .icon {
@@ -743,6 +746,10 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.portfolio {
+  background-color: #F4F4F4;
+}
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 50px auto;
@@ -881,6 +888,10 @@ section {
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
+
+.clients {
+  background-color: #F1F1F1;
+}
 .clients .clients-wrap {
   border-top: 1px solid #ececec;
   border-left: 1px solid #ececec;
@@ -894,8 +905,9 @@ section {
   border-right: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
   overflow: hidden;
-  background: #fff;
+  background: #f1f1f1;
   height: 100px;
+
 }
 
 .clients .client-logo img {
@@ -908,12 +920,16 @@ section {
 .clients .client-logo:hover img {
   -webkit-filter: none;
   filter: none;
-  transform: scale(1.1);
+  transform: scale(1.4);
 }
 
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+.about-us {
+  background-color: #F8F8F8;
+}
+
 .about-us .content h2 {
   font-weight: 700;
   font-size: 42px;
@@ -1351,7 +1367,7 @@ section {
 --------------------------------------------------------------*/
 .contact .info-wrap {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 60px;
 }
 
 .contact .info {
@@ -1374,7 +1390,6 @@ section {
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
   color: #111;
@@ -2128,12 +2143,8 @@ section {
 }
 
 #footer .footer-top {
-  padding: 60px 0 30px 0;
   background: #1e1e1e;
-}
-
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
+  text-align: center;
 }
 
 #footer .footer-top .footer-contact h3 {
