@@ -1,41 +1,29 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contato@consultoriamaximus.com.br';
+if(isset($_POST['email']) && !empty($_POST['email'])){
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+$nome = addslashes($_POST['name']);
+$email = addslashes($_POST['email']);
+$mensagem = addslashes($_POST['subject']);
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+$to = "contato@consultoriamaximus.com.br";
+$subject = "Contato - Consultoria Maximus";
+$body = "Nome: ".$nome. "\r\n".
+        "Email: ".$email. "\r\n".
+        "Mensagem: ".$mensagem. "\r\n";
+$header = "From:site@consultoriamaximus.com.br". "\r\n".
+          "Reply-To:".$email."\r\n".
+          "X=Mailer:PHP/".phpversion();
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+if(mail($to,$subject,$body,$header)){
 
-  echo $contact->send();
+  echo("Email enviado com sucesso!");
+}else{
+  echo("Houve um erro no envio, tente novamente");
+}
+
+}
+
 ?>
+
